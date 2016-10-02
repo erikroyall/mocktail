@@ -64,6 +64,8 @@ int main(void) {
   const jerry_char_t script[] = "var str = http.handle('Hello world', '8000', '200'); print(str);";
   size_t script_size = strlen((const char*) script);
 
+  create_modules();
+
   jerry_value_t eval_ret = jerry_eval(script, script_size, false);
   jerry_release_value(eval_ret);
 
